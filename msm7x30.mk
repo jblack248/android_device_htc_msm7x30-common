@@ -84,12 +84,11 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxVdec \
     libOmxVenc \
-    libOmxVdec \
     mm-vdec-omx-test \
     mm-video-driver-test \
     mm-venc-omx-test720p \
     mm-video-encdrv-test
-    #Twisted- libI420colorconvert
+    #Ace/Twisted- libI420colorconvert
 
 # Misc
 PRODUCT_PACKAGES += \
