@@ -38,6 +38,7 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
+    device/htc/msm7x30-common/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
@@ -46,12 +47,19 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm7x30-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
 
+# media config xml file
+PRODUCT_COPY_FILES += \
+    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
+    
+PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm7x30 \
     audio.primary.msm7x30 \
-    libaudioutils
+    libaudioutils \
+    libtinyalsa
 
 # Video
 PRODUCT_PACKAGES += \
@@ -64,6 +72,10 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm7x30
+
 # QCOM OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
@@ -72,6 +84,12 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxVdec \
     libOmxVenc
+# Not in JB branch
+#    mm-vdec-omx-test \
+#    mm-video-driver-test \
+#    mm-venc-omx-test720p \
+#    mm-video-encdrv-test
+    #Ace/Twisted- libI420colorconvert
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -103,7 +121,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # use high-density artwork where available
 PRODUCT_LOCALES += hdpi
-
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
