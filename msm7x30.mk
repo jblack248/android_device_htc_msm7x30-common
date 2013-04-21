@@ -47,10 +47,15 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/msm7x30-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
 
-# media config xml file
+# media configs
 PRODUCT_COPY_FILES += \
+    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf \
     device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
-    
+
+# adb hack
+PRODUCT_COPY_FILES += \
+    device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup
+
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
@@ -58,6 +63,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm7x30 \
     audio.primary.msm7x30 \
+    audio.usb.default \
     libaudioutils \
     libtinyalsa
 
@@ -70,11 +76,16 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libQcomUI \
-    libtilerenderer
+    libtilerenderer \
+    libdashplayer
 
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm7x30
+
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm7x30
 
 # QCOM OMX
 PRODUCT_PACKAGES += \
