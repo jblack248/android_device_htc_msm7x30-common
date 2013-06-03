@@ -55,9 +55,8 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
 BOARD_WLAN_DEVICE_REV            := bcm4329
 
-# QCOM Display - ### ACE
+# display
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
 BOARD_USES_ADRENO_200 := true
 TARGET_GRALLOC_USES_ASHMEM := true
 TARGET_PROVIDES_LIBLIGHTS := true
@@ -65,17 +64,21 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_GENLOCK := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_NEEDS_LEGACY_FB := true
+TARGET_NO_HW_VSYNC := true
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 
 COMMON_GLOBAL_CFLAGS += -DSCREEN_RELEASE -DREFRESH_RATE=60
 TARGET_USES_OVERLAY := true
-TARGET_QCOM_HDMI_OUT := true
-### two bypasses were false by default in CM
-TARGET_USES_SF_BYPASS := true
-TARGET_HAVE_BYPASS := true
+TARGET_QCOM_HDMI_OUT := false
+#TARGET_USES_SF_BYPASS := true
+#TARGET_HAVE_BYPASS := true
 
-# QCOM - ### TWISTED
+# graphics
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
+
+# hardware
+TARGET_USES_PMEM := true
 BOARD_USE_QCOM_PMEM := true
 BOARD_USES_QCOM_GPS := true
 BOARD_USES_QCOM_HARDWARE := true
@@ -114,9 +117,16 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 # Workaround for speedy broken overlay scaling
 BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
+# camera
 BOARD_USES_HTC_CAMERA := true
 CAMERA_CONVERT_COLORS := true
-COMMON_GLOBAL_CFLAGS += -DBYPASS_OFFSET
+# jellybean flags
+COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT -DQCOM_NO_SECURE_PLAYBACK -DNO_UPDATE_PREVIEW
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+BOARD_USES_HTC_GB_CAMERA := true
+BOARD_USES_LEGACY_OVERLAY := true
+BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
+TARGET_DISABLE_ARM_PIE := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
 
