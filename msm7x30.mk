@@ -95,12 +95,6 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxVdec \
     libOmxVenc
-# Not in JB branch
-#    mm-vdec-omx-test \
-#    mm-video-driver-test \
-#    mm-venc-omx-test720p \
-#    mm-video-encdrv-test
-    #Ace/Twisted- libI420colorconvert
 
 # Misc
 PRODUCT_PACKAGES += \
