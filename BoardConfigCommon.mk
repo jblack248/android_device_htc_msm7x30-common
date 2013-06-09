@@ -15,6 +15,7 @@
 # inherit from common msm7x30 Recovery
 -include device/htc/7x30-recovery/BoardConfigCommon.mk
 
+BOARD_VENDOR := htc
 TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := msm7x30
@@ -92,6 +93,10 @@ BOARD_USES_QCOM_AUDIO_VOIPMUTE := false
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+
+# bluedroid
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/msm7x30-common/bluetooth/vnd_msm7x30.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/msm7x30-common/bluetooth/include
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
