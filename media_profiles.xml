@@ -38,11 +38,10 @@
 <!ATTLIST Audio sampleRate CDATA #REQUIRED>
 <!ATTLIST Audio channels (1|2) #REQUIRED>
 <!ELEMENT ImageEncoding EMPTY>
-<!ATTLIST ImageEncoding quality (95|80|70|60|50|40) #REQUIRED>
+<!ATTLIST ImageEncoding quality (90|80|70|60|50|40) #REQUIRED>
 <!ELEMENT ImageDecoding EMPTY>
 <!ATTLIST ImageDecoding memCap CDATA #REQUIRED>
 <!ELEMENT Camera EMPTY>
-<!ATTLIST Camera previewFrameRate CDATA #REQUIRED>
 <!ELEMENT EncoderOutputFileFormat EMPTY>
 <!ATTLIST EncoderOutputFileFormat name (mp4|3gp) #REQUIRED>
 <!ELEMENT VideoEncoderCap EMPTY>
@@ -128,7 +127,7 @@
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="15000000"
+                   bitRate="8000000"
                    width="1280"
                    height="720"
                    frameRate="15" />
@@ -190,12 +189,10 @@
                    channels="1" />
         </EncoderProfile>
 
-        <ImageEncoding quality="95" />
+        <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
         <ImageDecoding memCap="20000000" />
-
-        <Camera previewFrameRate="31" />
 
     </CamcorderProfiles>
 
@@ -237,18 +234,6 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="8000000"
-                   width="1280"
-                   height="720"
-                   frameRate="15" />
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -288,25 +273,10 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="8000000"
-                   width="1280"
-                   height="720"
-                   frameRate="15" />
-            <!-- audio setting is ignored -->
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-
         <ImageEncoding quality="95" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
         <ImageDecoding memCap="20000000" />
-
-        <Camera previewFrameRate="31" />
 
     </CamcorderProfiles>
 
@@ -360,7 +330,6 @@
     -->
     <VideoDecoderCap name="wmv" enabled="false"/>
     <AudioDecoderCap name="wma" enabled="false"/>
-
     <!--
         The VideoEditor Capability configuration:
         - maxInputFrameWidth: maximum video width of imported video clip.
