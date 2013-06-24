@@ -57,6 +57,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup
 
+# Sensors
+PRODUCT_PACKAGES += \
+    lights.msm7x30 \
+    sensors.msm7x30
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
