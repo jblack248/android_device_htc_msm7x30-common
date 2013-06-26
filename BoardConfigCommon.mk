@@ -33,8 +33,8 @@ TARGET_HAVE_TSLIB := false
 TARGET_ARCH_VARIANT_CPU := cortex-a8
 
 TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a8)
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mcpu=cortex-a8 -mtune=cortex-a8 -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mcpu=cortex-a8 -mtune=cortex-a8 -mfloat-abi=softfp
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 TARGET_USE_SCORPION_PLD_SET := true
 TARGET_SCORPION_BIONIC_PLDOFFS := 6
