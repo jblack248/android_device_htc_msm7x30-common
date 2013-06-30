@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/msm7x30-common/configs/media_profiles.xml:system/etc/media_profiles.xml
     
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 

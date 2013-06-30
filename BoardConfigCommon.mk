@@ -73,7 +73,7 @@ TARGET_QCOM_HDMI_OUT := false
 
 # graphics
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
-BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
+BOARD_EGL_CFG := device/htc/msm7x30-common/configs/egl.cfg
 
 # hardware
 TARGET_USES_PMEM := true
