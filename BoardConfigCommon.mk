@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Common stuff
+DEVICE_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
+
 BOARD_VENDOR := htc
 TARGET_NO_BOOTLOADER := true
 

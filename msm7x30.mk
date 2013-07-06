@@ -58,8 +58,6 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup \
     device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
-PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
