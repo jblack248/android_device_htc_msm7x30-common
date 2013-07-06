@@ -78,13 +78,9 @@ BOARD_EGL_CFG := device/htc/msm7x30-common/configs/egl.cfg
 # hardware
 TARGET_USES_PMEM := true
 BOARD_USE_QCOM_PMEM := true
-BOARD_USES_QCOM_GPS := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_LIBS := true
-
-# gps
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # audio
 TARGET_QCOM_AUDIO_VARIANT := caf
@@ -99,6 +95,11 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # bluedroid
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/msm7x30-common/bluetooth/vnd_msm7x30.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/msm7x30-common/bluetooth/include
+
+# GPS
+TARGET_QCOM_GPS_VARIANT := legacy
+BOARD_USES_QCOM_GPS := true
+BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
