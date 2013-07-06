@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common msm7x30 Recovery
--include device/htc/7x30-recovery/BoardConfigCommon.mk
-
 BOARD_VENDOR := htc
 TARGET_NO_BOOTLOADER := true
 
