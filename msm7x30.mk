@@ -57,10 +57,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup
 
-# Sensors
+# Wifi firmware
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+
+# Device-Specific HALs
 PRODUCT_PACKAGES += \
     lights.msm7x30 \
-    sensors.msm7x30
+    sensors.msm7x30 \
+    power.msm7x30
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -75,21 +79,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     copybit.msm7x30 \
     gralloc.msm7x30 \
-    hwcomposer.msm7x30 \
-    libgenlock \
-    libmemalloc \
-    liboverlay \
-    libQcomUI \
-    libtilerenderer \
-    libdashplayer
-
-# Camera
-PRODUCT_PACKAGES += \
-    camera.msm7x30
-
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.msm7x30
+    hwcomposer.msm7x30
 
 # QCOM OMX
 PRODUCT_PACKAGES += \
@@ -129,7 +119,7 @@ endif
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # use high-density artwork where available
-PRODUCT_LOCALES += hdpi
+PRODUCT_LOCALES += en
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
