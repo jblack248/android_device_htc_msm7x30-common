@@ -42,19 +42,21 @@ TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
 
-# Wifi related defines - look at Ace for more changes
-WIFI_BAND                        := 802_11_ABG
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_WLAN_DEVICE                := bcm4329
-WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4329/parameters/firmware_path"
-WIFI_DRIVER_MODULE_NAME          := bcm4329
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
-BOARD_WLAN_DEVICE_REV            := bcm4329
+# Wifi
+WIFI_BAND := 802_11_ABGN
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
+WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_MODULE_NAME := bcmdhd
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
+BOARD_LEGACY_NL80211_STA_EVENTS := true
 
 # display
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
